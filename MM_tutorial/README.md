@@ -1,5 +1,7 @@
 Here you'll find power, cross, lags spectra and coherence function for a number of sources and missions with the corresponding .xcm files to load the files and the models in Xspec. Each subdirectlry has a README.md file with the description of the files available.
 
+**Start with the directory [RXTE_GRS_1915+105](https://github.com/EdNathan/CompactObjects3D/tree/main/MM_tutorial/RXTE_GRS_1915%2B105), since the .xcm files have many comments explaining what it is done.**
+
 In general the directories contain:
 
 Power spectrum band 1 (PS1)
