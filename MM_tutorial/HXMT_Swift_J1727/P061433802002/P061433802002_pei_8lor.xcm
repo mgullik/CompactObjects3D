@@ -1,0 +1,231 @@
+statistic chi
+data 1:1 P061433802002_LE_2-10keV_16s_cogti.pha
+response  1:1 P061433802002_LE_2-10keV_16s_cogti.rmf
+
+data 2:2 P061433802002_HE_28-100keV_16s_cogti.pha
+response  2:2 P061433802002_HE_28-100keV_16s_cogti.rmf
+
+data 3:3 P061433802002_real_2-10_28-100keV_16s.pha
+response  3:3 P061433802002_real_2-10_28-100keV_16s.rmf
+
+data 4:4 P061433802002_imag_2-10_28-100keV_16s.pha
+response  4:4 P061433802002_imag_2-10_28-100keV_16s.rmf
+
+data 5:5 P061433802002_lag_2-10_28-100keV_16s.pha
+response  5:5 P061433802002_lag_2-10_28-100keV_16s.rmf
+
+data 6:6 P061433802002_coh_2-10_28-100keV_16s.pha
+response  6:6 P061433802002_coh_2-10_28-100keV_16s.rmf
+ignore 1:153-251 2:153-251 3:153-251 4:153-251 5:1-251 6:1-251
+
+method leven 10 0.01
+abund angr
+xsect vern
+cosmo 70 0 0.73
+xset delta 0.01
+systematic 0
+mdefine xlor Lorentz(LineE,Width)cos(plag+3.14159/4) : add
+mdefine ylor Lorentz(LineE,Width)sin(plag+3.14159/4) : add
+mdefine coherence ((xlor(LineE1,Width1,plag1)*norm1+xlor(LineE2,Width2,plag2)*norm2+xlor(LineE3,Width3,plag3)*norm3+xlor(LineE4,Width4,plag4)*norm4+xlor(LineE5,Width5,plag5)*norm5+xlor(LineE6,Width6,plag6)*norm6+xlor(LineE7,Width7,plag7)*norm7+xlor(LineE8,Width8,plag8)*norm8)**2+(ylor(LineE1,Width1,plag1)*norm1+ylor(LineE2,Width2,plag2)*norm2+ylor(LineE3,Width3,plag3)*norm3+ylor(LineE4,Width4,plag4)*norm4+ylor(LineE5,Width5,plag5)*norm5+ylor(LineE6,Width6,plag6)*norm6+ylor(LineE7,Width7,plag7)*norm7+ylor(LineE8,Width8,plag8)*norm8)**2)/((Lorentz(LineE1,Width1)*nn1+Lorentz(LineE2,Width2)*nn2+Lorentz(LineE3,Width3)*nn3+Lorentz(LineE4,Width4)*nn4+Lorentz(LineE5,Width5)*nn5+Lorentz(LineE6,Width6)*nn6+Lorentz(LineE7,Width7)*nn7+Lorentz(LineE8,Width8)*nn8)*(Lorentz(LineE1,Width1)*mm1+Lorentz(LineE2,Width2)*mm2+Lorentz(LineE3,Width3)*mm3+Lorentz(LineE4,Width4)*mm4+Lorentz(LineE5,Width5)*mm5+Lorentz(LineE6,Width6)*mm6+Lorentz(LineE7,Width7)*mm7+Lorentz(LineE8,Width8)*mm8)) : add
+mdefine plags atan2(ylor(LineE1,Width1,plag1)*norm1+ylor(LineE2,Width2,plag2)*norm2+ylor(LineE3,Width3,plag3)*norm3+ylor(LineE4,Width4,plag4)*norm4+ylor(LineE5,Width5,plag5)*norm5+ylor(LineE6,Width6,plag6)*norm6+ylor(LineE7,Width7,plag7)*norm7+ylor(LineE8,Width8,plag8)*norm8,xlor(LineE1,Width1,plag1)*norm1+xlor(LineE2,Width2,plag2)*norm2+xlor(LineE3,Width3,plag3)*norm3+xlor(LineE4,Width4,plag4)*norm4+xlor(LineE5,Width5,plag5)*norm5+xlor(LineE6,Width6,plag6)*norm6+xlor(LineE7,Width7,plag7)*norm7+xlor(LineE8,Width8,plag8)*norm8)-3.14159/4 : add
+model  1:pds1 lorentz + lorentz + lorentz + lorentz + lorentz + lorentz + lorentz + lorentz
+        8.48785       0.02      1e-10      1e-10      1e+10      1e+10
+       0.854328       0.02      1e-10      1e-10      1e+10      1e+10
+     6.5062e-05       0.02      1e-10      1e-10      1e+10      1e+10
+        7.28877       0.02      1e-10      1e-10      1e+10      1e+10
+        1.11051       0.02      1e-10      1e-10      1e+10      1e+10
+    1.00001e-10       0.02      1e-10      1e-10      1e+10      1e+10
+      0.0993518       0.02      1e-10      1e-10      1e+10      1e+10
+        2.00645       0.02      1e-10      1e-10      1e+10      1e+10
+     0.00111236       0.02      1e-10      1e-10      1e+10      1e+10
+        1.36969       0.05      1e-10      1e-10      1e+10      1e+10
+        1.46657       0.02      1e-10      1e-10      1e+10      1e+10
+     0.00170648       0.02      1e-10      1e-10      1e+10      1e+10
+        6.80709       0.02      1e-10      1e-10      1e+10      1e+10
+        2.07753       0.02      1e-10      1e-10      1e+10      1e+10
+     0.00187832       0.02      1e-10      1e-10      1e+10      1e+10
+    1.00374e-10       0.02      1e-10      1e-10      1e+10      1e+10
+        37.4647       0.02      1e-10      1e-10      1e+10      1e+10
+    0.000384919       0.02      1e-10      1e-10      1e+10      1e+10
+        4.97953       0.02      1e-10      1e-10      1e+10      1e+10
+        3.84419       0.02      1e-10      1e-10      1e+10      1e+10
+     0.00059939       0.02      1e-10      1e-10      1e+10      1e+10
+        13.7307       0.02      1e-10      1e-10      1e+10      1e+10
+        3.34805       0.02      1e-10      1e-10      1e+10      1e+10
+     0.00040072       0.02      1e-10      1e-10      1e+10      1e+10
+model  2:pds2 lorentz + lorentz + lorentz + lorentz + lorentz + lorentz + lorentz + lorentz
+= pds1:p1
+= pds1:p2
+     0.00705669       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p4
+= pds1:p5
+     0.00717106       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p7
+= pds1:p8
+     0.00170297       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p10
+= pds1:p11
+     0.00482966       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p13
+= pds1:p14
+      0.0141395       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p16
+= pds1:p17
+      0.0472019       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p19
+= pds1:p20
+    1.00001e-10       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p22
+= pds1:p23
+          1e-10       0.02      1e-10      1e-10      1e+10      1e+10
+model  3:real xlor + xlor + xlor + xlor + xlor + xlor + xlor + xlor
+= pds1:p1
+= pds1:p2
+       0.653328       0.02      -1000      -1000       1000       1000
+     0.00119506       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p4
+= pds1:p5
+        1.33848       0.02      -1000      -1000       1000       1000
+     0.00225311       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p7
+= pds1:p8
+        3.46554       0.02      -1000      -1000       1000       1000
+    0.000457707       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p10
+= pds1:p11
+         1.1854       0.02      -1000      -1000       1000       1000
+     0.00319541       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p13
+= pds1:p14
+      -0.670855       0.02      -1000      -1000       1000       1000
+     0.00514726       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p16
+= pds1:p17
+        -1.2321       0.02      -1000      -1000       1000       1000
+     0.00157665       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p19
+= pds1:p20
+        1.82823       0.02      -1000      -1000       1000       1000
+     0.00280177       0.02      1e-10      1e-10      1e+10      1e+10
+= pds1:p22
+= pds1:p23
+        1.38344       0.02      -1000      -1000       1000       1000
+     0.00027166       0.02      1e-10      1e-10      1e+10      1e+10
+model  4:imag ylor + ylor + ylor + ylor + ylor + ylor + ylor + ylor
+= real:p1
+= real:p2
+= real:p3
+= real:p4
+= real:p5
+= real:p6
+= real:p7
+= real:p8
+= real:p9
+= real:p10
+= real:p11
+= real:p12
+= real:p13
+= real:p14
+= real:p15
+= real:p16
+= real:p17
+= real:p18
+= real:p19
+= real:p20
+= real:p21
+= real:p22
+= real:p23
+= real:p24
+= real:p25
+= real:p26
+= real:p27
+= real:p28
+= real:p29
+= real:p30
+= real:p31
+= real:p32
+model  5:lag plags
+= real:p1
+= real:p2
+= real:p3
+= real:p4
+= real:p5
+= real:p6
+= real:p7
+= real:p8
+= real:p9
+= real:p10
+= real:p11
+= real:p12
+= real:p13
+= real:p14
+= real:p15
+= real:p16
+= real:p17
+= real:p18
+= real:p19
+= real:p20
+= real:p21
+= real:p22
+= real:p23
+= real:p24
+= real:p25
+= real:p26
+= real:p27
+= real:p28
+= real:p29
+= real:p30
+= real:p31
+= real:p32
+              1         -1          0          0      1e+20      1e+24
+model  6:coh coherence
+= real:p1
+= real:p2
+= real:p3
+= real:p4
+= real:p5
+= real:p6
+= real:p7
+= real:p8
+= real:p9
+= real:p10
+= real:p11
+= real:p12
+= real:p13
+= real:p14
+= real:p15
+= real:p16
+= real:p17
+= real:p18
+= real:p19
+= real:p20
+= real:p21
+= real:p22
+= real:p23
+= real:p24
+= real:p25
+= real:p26
+= real:p27
+= real:p28
+= real:p29
+= real:p30
+= real:p31
+= real:p32
+= pds1:p3
+= pds1:p6
+= pds1:p9
+= pds1:p12
+= pds1:p15
+= pds1:p18
+= pds1:p21
+= pds1:p24
+= pds2:p3
+= pds2:p6
+= pds2:p9
+= pds2:p12
+= pds2:p15
+= pds2:p18
+= pds2:p21
+= pds2:p24
+              1         -1          0          0      1e+20      1e+24
+bayes off
