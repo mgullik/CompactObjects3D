@@ -15,6 +15,9 @@ For those of you who install Python via pip, you can install these with
 pip install -r requirements.txt
 ```
 
+One package that will have to be downloaded directly from a repo is nDspec, which can be found here
+<https://github.com/nDspec/nDspec>
+
 We also will require an XSPEC installation. We recommend installing HEASOFT v6.36.0, that includes IXPE analysis tools v1.11.
 
 <https://heasarc.gsfc.nasa.gov/docs/software/lheasoft/download.html>
