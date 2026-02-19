@@ -9,7 +9,14 @@ matplotlib>=3.5.1
 stingray
 
 # Other requirements
+pandas
+sbi
+tqdm
+numba
+seaborn
 notebook
 ixpeobssim
 torch
 scikit-learn
+arviz
+pyro-ppl
